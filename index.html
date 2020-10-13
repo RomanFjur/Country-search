@@ -8,19 +8,19 @@
   <body>
     <div class="wrapper">
       <div class="radio-wrapper">
-        <label for="search-type"><input type="radio" name="search-type">onChange</label>
-        <label for="search-type"><input type="radio" name="search-type">onSubmit</label>
+        <label for="search-type"><input type="radio" name="search-type" class="onChange" checked>onChange</label>
+        <label for="search-type"><input type="radio" name="search-type" class="onSubmit">onSubmit</label>
       </div>
-      <div class="">
-        <input type="search" name="search-country" placeholder="Country">
-        <button type="button" name="button">OK</button>
+      <div class="search-wrapper">
+        <input type="search" name="search-country" placeholder="Country" class="search">
+        <button type="button" name="button" class="button search-button">OK</button>
       </div>
       <div class="country-list"></div>
       <div class="json-block">
-        <button type="button" name="button">Get JSON string</button>
-        <button type="button" name="button">Reset</button>
+        <button type="button" name="button" class="button">Get JSON string</button>
+        <button type="button" name="button" class="button">Reset</button>
       </div>
-      <textarea name="name" rows="8" cols="80"></textarea>
+      <textarea name="name" rows="8" cols="60"></textarea>
     </div>
   </body>
   <script src="script.js" defer></script>
