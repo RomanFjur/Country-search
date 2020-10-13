@@ -1,3 +1,4 @@
+// Создание массива со странами
 let countries = [
   {
     label: 'Australia',
@@ -17,9 +18,11 @@ let countries = [
   }
 ];
 
+// Объявление переменных: блок в котором будут отображаться список стран и строка поиска
 let countryList = document.querySelector('.country-list'),
     searchInput = document.querySelector('.search');
 
+// Переменные для дальнейшего создания элементов страницы
 let countryLink,
     countryTitle,
     countryImage,
@@ -27,10 +30,11 @@ let countryLink,
     countryLinkArrow,
     insideLinkDiv;
 
-
+// Радио-кнопки (для дальнейшего использования в переключении стиля поиска)
 let radioChange = document.querySelector('.onChange'),
     radioSubmit = document.querySelector('.onSubmit');
 
+// Перебор массива со странами с дальнейшей генерацией элементов html-страницы (списка стран)
 for (let i = 0; i < countries.length; i++) {
   countryLink = document.createElement('a');
   countryTitle = document.createElement('p');
@@ -52,7 +56,7 @@ for (let i = 0; i < countries.length; i++) {
   countryLink.classList.add('country-link');
   countryTitle.classList.add('country-title');
   countryDesc.classList.add('country-desc');
-  countryImage.classList.add('flag');
+  countryImage.classList.add('country-flag');
   countryLinkArrow.classList.add('country-link__arrow');
 
   countryList.append(countryLink);
@@ -63,9 +67,11 @@ for (let i = 0; i < countries.length; i++) {
   insideLinkDiv.append(countryDesc);
 }
 
+// Создание массивов ссылок (стран) и названий стран
 let links = Array.from(document.querySelectorAll('.country-link')),
     titles = Array.from(document.querySelectorAll('.country-title'));
 
+// Поиск из списка стран
 searchInput.addEventListener('input', () => {
   let filter = searchInput.value.toLowerCase();
 
