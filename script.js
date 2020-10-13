@@ -63,3 +63,19 @@ if (radioChange.checked) {
     }
   });
 }
+
+if (radioSubmit.checked) {
+  let searchButton = document.querySelector('.search-button');
+
+  searchButton.addEventListener('click', () => {
+    let filter = input.value.toLowerCase();
+
+    for (var j = 0; j < list.length; j++) {
+      if (!links[j].textContent.toLowerCase().includes(filter)) {
+        list[j].style.display = 'none';
+      } else {
+        list[j].style.display = 'flex';
+      }
+    }
+  });
+}
