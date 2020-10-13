@@ -8,3 +8,72 @@
 body {
   font-family: 'Montserrat';
 }
+
+input {
+  border-radius: 4px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 175px;
+  padding: 0;
+}
+
+.radio-wrapper {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+.search-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  margin-bottom: 40px;
+  padding: 0;
+}
+
+.search {
+  width: 384px;
+  height: 40px;
+  margin: 0;
+  margin-right: 16px;
+  padding-left: 16px;
+  color: #333333;
+  font-size: 16px;
+  line-height: 19px;
+  font-family: 'Montserrat';
+  border: none;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  box-sizing: border-box;
+}
+
+.search-button {
+  width: 100px;
+  height: 40px;
+  margin: 0;
+}
+
+.button {
+  font-family: 'Montserrat';
+  border: none;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+}
+
+.button:hover {
+  border: 1px solid #707070;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.country {
+  width: 500px;
+  height: 50px;
+  font-family: 'Montserrat';
+  background-color: #f3f3f3;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+}
