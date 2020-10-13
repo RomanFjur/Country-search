@@ -34,7 +34,7 @@ for (var i = 0; i < countryes.length; i++) {
   countryLink = document.createElement('a');
   countryImage = document.createElement('img');
   insideLiDiv = document.createElement('div');
-  linkDesc = document.createElement('a');
+  linkDesc = document.createElement('p');
   countryLink.textContent = countryes[i].label;
   countryImage.src = countryes[i].link;
   countryImage.classList.add('flag');
