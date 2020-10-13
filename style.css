@@ -53,7 +53,7 @@ label {
   display: block;
   position: absolute;
   content: '';
-  top: 0;
+  top: 2px;
   left: -20px;
   width: 16px;
   height: 16px;
@@ -67,7 +67,7 @@ label {
   display: block;
   position: absolute;
   content: '';
-  top: 3px;
+  top: 5px;
   left: -17px;
   width: 10px;
   height: 10px;
