@@ -8,14 +8,14 @@
   <body>
     <div class="wrapper">
       <div class="radio-wrapper">
-        <label for="search-type"><input type="radio" name="search-type" class="onChange">onChange</label>
-        <label for="search-type"><input type="radio" name="search-type" class="onSubmit" checked>onSubmit</label>
+        <label for="onChange" class="onChange"><input type="radio" name="search-type" id="onChange"><span>onChange</span></label>
+        <label for="onSubmit" class="onSubmit"><input type="radio" name="search-type" id="onSubmit"><span>onSubmit</span></label>
       </div>
       <div class="search-wrapper">
         <input type="search" name="search-country" placeholder="Country" class="search">
         <button type="button" name="button" class="button search-button">OK</button>
       </div>
-      <ul class="country-list"></ul>
+      <div class="country-list"></div>
       <div class="json-block">
         <button type="button" name="button" class="button json-button">Get JSON string</button>
         <button type="button" name="button" class="button json-button">Reset</button>
