@@ -7,6 +7,14 @@ let countryes = [
     label: 'Albania',
     link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Flag_of_Albania.svg/800px-Flag_of_Albania.svg.png'
   },
+  {
+    label: 'Belarus',
+    link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Flag_of_Belarus.svg/800px-Flag_of_Belarus.svg.png'
+  },
+  {
+    label: 'Japan',
+    link: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/800px-Flag_of_Japan.svg.png'
+  }
 ];
 
 let countryList = document.querySelector('.country-list'),
@@ -44,10 +52,10 @@ let links = Array.from(document.querySelectorAll('a'));
 
 if (radioChange.checked) {
   input.addEventListener('input', () => {
-    let filter = input.value;
+    let filter = input.value.toLowerCase();
 
     for (var j = 0; j < list.length; j++) {
-      if (!links[j].textContent.includes(filter)) {
+      if (!links[j].textContent.toLowerCase().includes(filter)) {
         list[j].style.display = 'none';
       } else {
         list[j].style.display = 'flex';
