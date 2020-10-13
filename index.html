@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Country Search</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="radio-wrapper">
+        <label for="search-type"><input type="radio" name="search-type">onChange</label>
+        <label for="search-type"><input type="radio" name="search-type">onSubmit</label>
+      </div>
+      <div class="">
+        <input type="search" name="search-country" placeholder="Country">
+        <button type="button" name="button">OK</button>
+      </div>
+      <div class="country-list"></div>
+      <div class="json-block">
+        <button type="button" name="button">Get JSON string</button>
+        <button type="button" name="button">Reset</button>
+      </div>
+      <textarea name="name" rows="8" cols="80"></textarea>
+    </div>
+  </body>
+  <script src="script.js" defer></script>
+</html>
