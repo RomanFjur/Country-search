@@ -47,6 +47,7 @@ for (let i = 0; i < countries.length; i++) {
   countryDesc.textContent = `en.wikipedia.org/wiki/${countries[i].label}`;
   countryLink.href = `https://${countryDesc.textContent}`;
   countryImage.src = countries[i].link;
+  countryImage.alt = countries[i].label;
   countryLinkArrow.innerHTML = `
     <svg xmlns="http://www.w3.org/2000/svg" width="10.806" height="17.5" viewBox="0 0 10.806 17.5">
     <path id="ic_chevron_right_24px" d="M10.646,6,8.59,8.056l6.679,6.694L8.59,21.444,10.646,23.5l8.75-8.75Z" transform="translate(-8.59 -6)" fill="#333"/>
@@ -73,10 +74,10 @@ let links = Array.from(document.querySelectorAll('.country-link')),
 
 // Поиск из списка стран
 searchInput.addEventListener('input', () => {
-  let filter = searchInput.value.toLowerCase();
+  let regexp = new RegExp(`${searchInput.value}`, `i`);
 
   for (let j = 0; j < links.length; j++) {
-    if (!titles[j].textContent.toLowerCase().includes(filter)) {
+    if (!regexp.test(titles[j].textContent)) {
       links[j].style.display = 'none';
     } else {
       links[j].style.display = 'flex';
