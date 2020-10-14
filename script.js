@@ -72,11 +72,25 @@ for (let i = 0; i < countries.length; i++) {
 let links = Array.from(document.querySelectorAll('.country-link')),
     titles = Array.from(document.querySelectorAll('.country-title'));
 
-// Поиск из списка стран
-// По вводу названия страны (в процессе ввода)
+// Кнопка "Ок"
+let searchButton = document.querySelector('.search-button');
 
-if (radioChange.checked) {
-  searchInput.addEventListener('input', () => {
+// События смены состояния checked у radio-button-ов
+
+radioChange.addEventListener('click', () => {
+  radioSubmit.removeAttribute('checked');
+  radioChange.setAttribute('checked', 'checked');
+});
+
+radioSubmit.addEventListener('click', () => {
+  radioChange.removeAttribute('checked');
+  radioSubmit.setAttribute('checked', 'checked');
+});
+
+// Проверка на checked и поиск из списка стран (ДОРАБОТАТЬ!)
+
+if (radioChange.hasAttribute('checked')) { // Проверка на checked у первого radio-button
+  searchInput.addEventListener('input', () => { // По вводу названия страны (в процессе ввода)
     let regexp = new RegExp(`${searchInput.value}`, `i`);
 
     for (let j = 0; j < links.length; j++) {
@@ -87,13 +101,8 @@ if (radioChange.checked) {
       }
     }
   });
-}
-
-let searchButton = document.querySelector('.search-button');
-
-// По нажатию на кнопку "Ок"
-if (radioSubmit.checked) {
-  searchButton.addEventListener('click', () => {
+} else { // Проверка на checked у второго (иначе) radio-button
+  searchButton.addEventListener('click', () => { // По нажатию на кнопку "Ок"
     let regexp = new RegExp(`${searchInput.value}`, `i`);
 
     for (let j = 0; j < links.length; j++) {
