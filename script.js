@@ -31,8 +31,8 @@ let countryLink,
     insideLinkDiv;
 
 // Радио-кнопки (для дальнейшего использования в переключении стиля поиска)
-let radioChange = document.querySelector('.onChange'),
-    radioSubmit = document.querySelector('.onSubmit');
+let radioChange = document.querySelector('#onChange'),
+    radioSubmit = document.querySelector('#onSubmit');
 
 // Перебор массива со странами с дальнейшей генерацией элементов html-страницы (списка стран)
 for (let i = 0; i < countries.length; i++) {
@@ -73,44 +73,35 @@ let links = Array.from(document.querySelectorAll('.country-link')),
     titles = Array.from(document.querySelectorAll('.country-title'));
 
 // Поиск из списка стран
-searchInput.addEventListener('input', () => {
-  let regexp = new RegExp(`${searchInput.value}`, `i`);
+// По вводу названия страны (в процессе ввода)
 
-  for (let j = 0; j < links.length; j++) {
-    if (!regexp.test(titles[j].textContent)) {
-      links[j].style.display = 'none';
-    } else {
-      links[j].style.display = 'flex';
+if (radioChange.checked) {
+  searchInput.addEventListener('input', () => {
+    let regexp = new RegExp(`${searchInput.value}`, `i`);
+
+    for (let j = 0; j < links.length; j++) {
+      if (!regexp.test(titles[j].textContent)) {
+        links[j].style.display = 'none';
+      } else {
+        links[j].style.display = 'flex';
+      }
     }
-  }
-});
+  });
+}
 
-// if (radioChange.checked) {
-//   searchInput.addEventListener('input', () => {
-//     let filter = searchInput.value.toLowerCase();
-//
-//     for (let j = 0; j < links.length; j++) {
-//       if (!titles[j].textContent.toLowerCase().includes(filter)) {
-//         links[j].style.display = 'none';
-//       } else {
-//         links[j].style.display = 'flex';
-//       }
-//     }
-//   });
-// }
-//
-// let searchButton = document.querySelector('.search-button');
-//
-// if (radioSubmit.checked) {
-//   searchButton.addEventListener('click', () => {
-//     let filter = searchInput.value.toLowerCase();
-//
-//     for (let j = 0; j < links.length; j++) {
-//       if (!titles[j].textContent.toLowerCase().includes(filter)) {
-//         links[j].style.display = 'none';
-//       } else {
-//         links[j].style.display = 'flex';
-//       }
-//     }
-//   });
-// }
+let searchButton = document.querySelector('.search-button');
+
+// По нажатию на кнопку "Ок"
+if (radioSubmit.checked) {
+  searchButton.addEventListener('click', () => {
+    let regexp = new RegExp(`${searchInput.value}`, `i`);
+
+    for (let j = 0; j < links.length; j++) {
+      if (!regexp.test(titles[j].textContent)) {
+        links[j].style.display = 'none';
+      } else {
+        links[j].style.display = 'flex';
+      }
+    }
+  });
+}
